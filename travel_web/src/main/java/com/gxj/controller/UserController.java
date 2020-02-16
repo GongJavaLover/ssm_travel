@@ -1,7 +1,10 @@
 package com.gxj.controller;
 
+import com.gxj.dao.UserDao;
 import com.gxj.domain.Role;
+import com.gxj.domain.Route;
 import com.gxj.domain.UserInfo;
+import com.gxj.service.RouteService;
 import com.gxj.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,11 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RouteService routeService;
+
+
 
     //为用户添加角色操作
     @RequestMapping("/addRoleToUser.do")
@@ -50,7 +58,7 @@ public class UserController {
 
     //添加用户操作
     @RequestMapping("/save.do")
-    public String sava(UserInfo userInfo){
+    public String sava(UserInfo userInfo) throws Exception{
         userService.save(userInfo);
         return "redirect:findAll.do";
     }
@@ -65,6 +73,21 @@ public class UserController {
         return mv;
     }
 
+    //用户注册操作
+    @RequestMapping("/register.do")
+    public String register(UserInfo userInfo) throws Exception{
+        userService.register(userInfo);
+        return "../login";
+    }
 
+    //后台跳转到前台
+    @RequestMapping("/transfer.do")
+    public ModelAndView transfer() throws Exception{
+        ModelAndView mv=new ModelAndView();
+        List<Route> routes = routeService.findAll();
+        mv.addObject("routes",routes);
+        mv.setViewName("/front-pages/travel-index");
+        return mv;
+    }
 
 }

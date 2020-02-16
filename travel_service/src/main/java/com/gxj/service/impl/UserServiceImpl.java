@@ -2,6 +2,7 @@ package com.gxj.service.impl;
 
 import com.gxj.dao.UserDao;
 import com.gxj.domain.Role;
+import com.gxj.domain.Route;
 import com.gxj.domain.UserInfo;
 import com.gxj.service.UserService;
 import org.apache.ibatis.annotations.Param;
@@ -44,9 +45,18 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+
+
     @Override
-    public void save(UserInfo userInfo) {
+    public void save(UserInfo userInfo) throws Exception{
         userInfo.setPassword(bCryptPasswordEncoder.encode(userInfo.getPassword()));
+        userDao.save(userInfo);
+    }
+
+    @Override
+    public void register(UserInfo userInfo) throws Exception{
+        userInfo.setPassword(bCryptPasswordEncoder.encode(userInfo.getPassword()));
+        userInfo.setStatus(1);
         userDao.save(userInfo);
     }
 

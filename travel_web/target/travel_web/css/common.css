@@ -88,12 +88,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .login_out, .login {  
     height: 50px;
+    margin-left: 40px;
     line-height: 36px;
     float: right;
 }
 
 .login {
-    width: 205px;
+    width: 350px;
     font-size: 12px;
 }
 .login a{
@@ -101,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #a1a1a1;
 }
 .login .collection {
-    color: #ff7676;
+    color: #9DC3FC;
     margin: 0 16px 0 10px;
 }
 .login_out a {
@@ -116,9 +117,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .topbar {
-    width: 1200px;
+    width: 1400px;
     overflow: hidden;
-    margin: 0 auto;
+    margin-left:200px;
 }
 
 .logo,
@@ -139,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     width: 400px;
     height: 36px;
-    border: 2px solid #ffc900;
+    border: 2px solid #9DC3FC;
     padding-left: 10px;
 }
 
@@ -151,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     width: 90px;
     height: 40px;
-    background: #ffc900;
+    background: #9DC3FC;
     text-align: center;
     line-height: 40px;
     color: #000;
@@ -193,14 +194,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hot_num {
-    color: #ffc900;
+    color: #9DC3FC;
     font-size: 18px;
+    /*#ffc900*/
 }
 
 .navitem {
     width: 100%;
     height: 40px;
-    background: #ffc900;
+    background: #9DC3FC;
 }
 
 .nav {
@@ -224,7 +226,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav .nav-active {
-    background-color: #ffd800;
+    background-color: #9DC3FC;
+    /*#4B90F9*/
 }
 
 .nav>li>a {   
@@ -289,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 38px;
     line-height: 38px;
-    background: #ffc900;
+    background: #919191;
     color: #3d3d3f;
     text-align: center;
     font-size: 12px;
@@ -313,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 40px;
 }
 .pageNum ul li.curPage {
-    background-color: #ffc900;
+    background-color: #9DC3FC;
 }
 .pageNum ul li a {
   width: 100%;

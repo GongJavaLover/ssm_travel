@@ -78,6 +78,7 @@ public class LogAop {
                 SecurityContext context= SecurityContextHolder.getContext();//从上下文中获取当前登录的用户
                 Authentication authentication = context.getAuthentication();
                 //获取当前的用户，这个user是security中的
+                    try {
                 User user=(User) authentication.getPrincipal();
                 String username = user.getUsername();
                 SysLog sysLog=new SysLog();
@@ -88,6 +89,9 @@ public class LogAop {
                 sysLog.setExecutionTime(executionTime);
                 sysLog.setMethod("[类名]:"+visitClass.getName()+"[方法名]:"+visitMethod.getName());
                 sysLogService.save(sysLog);
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
                 }
             }
         }

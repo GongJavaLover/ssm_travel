@@ -101,7 +101,7 @@
 
         }
 
-        $(function () {
+   /*     $(function () {
             //当表单提交时
             $("#registerForm").submit(function () {
                 //发送数据到服务器
@@ -130,7 +130,7 @@
             $("#name").blur(checkName);
             $("#telephone").blur(checkTelephone);
 
-        });
+        });*/
     </script>
 
 
@@ -229,7 +229,7 @@
                         <td class="td_left">
                         </td>
                         <td class="td_right check">
-                            <input type="submit" class="submit" value="注册">
+                            <button type="submit" class="submit" value="注册"></button>
                             <span id="msg" style="color: red;"></span>
                         </td>
                     </tr>

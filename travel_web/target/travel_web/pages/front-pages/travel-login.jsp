@@ -21,7 +21,7 @@
     <script src="${basePath}/js/angular.min.js"></script>
     <!--导入jquery-->
     <script src="${basePath}/js/jquery-3.3.1.js"></script>
-    <script>
+<%--    <script>
         $(function () {
             //给登录添加单击事件
             $("#btn_sub").click(function () {
@@ -37,7 +37,7 @@
                 })
             })
         })
-    </script>
+    </script>--%>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
 
             <!--登录错误提示消息-->
             <div id="errorMsg" class="alert alert-danger" ></div>
-            <form id="loginForm" action="" method="post" accept-charset="utf-8">
+            <form id="${basePath}/login.do" action="" method="post" accept-charset="utf-8">
                 <input type="hidden" name="action" value="login"/>
                 <input name="username" type="text" placeholder="请输入账号" autocomplete="off">
                 <input name="password" type="text" placeholder="请输入密码" autocomplete="off">
@@ -72,7 +72,7 @@
                     </script>
                 </div>
                 <div class="submit_btn">
-                    <button type="button" id="btn_sub">登录</button>
+                    <button type="submit" id="btn_sub">登录</button>
                     <div class="auto_login">
                         <input type="checkbox" name="" class="checkbox">
                         <span>自动登录</span>

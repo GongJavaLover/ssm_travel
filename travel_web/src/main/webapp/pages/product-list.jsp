@@ -202,29 +202,29 @@
                                     <input id="selall" type="checkbox" class="icheckbox_square-blue">
                                 </th>
                                 <th class="sorting_asc">ID</th>
-                                <th class="sorting_desc">编号/th>
                                 <th class="sorting_asc sorting_asc_disabled">产品名称</th>
-                                <th class="sorting_desc sorting_desc_disabled">出发城市</th>
-                                <th class="sorting">出发时间</th>
-                                <th class="text-center sorting">产品价格</th>
-                                <th class="text-center sorting">产品描述</th>
+                                <th class="sorting_desc">价格</th>
+                                <th class="sorting_desc sorting_desc_disabled">产品描述</th>
                                 <th class="text-center sorting">状态</th>
+                                <th class="sorting">时间</th>
+                                <th class="text-center sorting">数量</th>
+                                <th class="text-center sorting">类型</th>
                                 <th class="text-center">操作</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            <c:forEach items="${pageInfo.list}" var="product">
+                            <c:forEach items="${pageInfo.list}" var="route">
                             <tr>
                                 <td><input name="ids" type="checkbox"></td>
-                                <td>${product.id}</td>
-                                <td>${product.productNum}</td>
-                                <td>${product.productName}</td>
-                                <td>${product.cityName}</td>
-                                <td>${product.departureTimeStr}</td>
-                                <td class="text-center">${product.productPrice}</td>
-                                <td class="text-center">${product.productDesc}</td>
-                                <td class="text-center">${product.productStatusStr}</td>
+                                <td>${route.route_id}</td>
+                                <td>${route.route_name}</td>
+                                <td>${route.price}</td>
+                                <td>${route.routeIntroduce}</td>
+                                <td>${route.isThemeTourStr}</td>
+                                <td class="text-center">${route.rdate}</td>
+                                <td class="text-center">${route.count}</td>
+                                <td class="text-center">${route.category}</td>
 
                                 <td class="text-center">
                                     <button type="button" class="btn bg-olive btn-xs">订单</button>

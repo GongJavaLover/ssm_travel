@@ -104,7 +104,7 @@
 					<div class="col-md-2 title">订单编号</div>
 					<div class="col-md-4 data">
 						<input type="text" class="form-control" placeholder="订单编号"
-							value="${orders.orderNum }" readonly="readonly">
+							value="${orders.orderNum}" readonly="readonly">
 					</div>
 
 					<div class="col-md-2 title">下单时间</div>
@@ -115,29 +115,29 @@
 							</div>
 							<input type="text" class="form-control pull-right"
 								id="datepicker-a3" readonly="readonly"
-								value="${orders.orderTimeStr}">
+								value="${orders.orderTime}">
 						</div>
 					</div>
 					<div class="col-md-2 title">路线名称</div>
 					<div class="col-md-4 data">
 						<input type="text" class="form-control" placeholder="路线名称"
-							value="${orders.product.productName }" readonly="readonly">
-					</div>
-
-					<div class="col-md-2 title">出发城市</div>
-					<div class="col-md-4 data">
-						<input type="text" class="form-control" placeholder="出发城市"
-							value="${orders.product.cityName }" readonly="readonly">
+							value="${orders.route.route_name}" readonly="readonly">
 					</div>
 
 					<div class="col-md-2 title">出发时间</div>
+					<div class="col-md-4 data">
+						<input type="text" class="form-control" placeholder="出发时间"
+							value="${orders.route.rdate}" readonly="readonly">
+					</div>
+
+					<div class="col-md-2 title">线路类型</div>
 					<div class="col-md-4 data">
 						<div class="input-group date">
 							<div class="input-group-addon">
 								<i class="fa fa-calendar"></i>
 							</div>
 							<input type="text" class="form-control pull-right"
-								id="datepicker-a6" value="${orders.product.departureTimeStr}"
+								id="datepicker-a6" value="${orders.route.category}"
 								readonly="readonly">
 						</div>
 					</div>
@@ -147,9 +147,9 @@
 							value="${orders.peopleCount}" readonly="readonly">
 					</div>
 
-					<div class="col-md-2 title rowHeight2x">其他信息</div>
+					<div class="col-md-2 title rowHeight2x">其他要求</div>
 					<div class="col-md-10 data rowHeight2x">
-						<textarea class="form-control" rows="3" placeholder="其他信息">
+						<textarea class="form-control" rows="3" placeholder="其他要求">
 							${orders.orderDesc }
 						</textarea>
 					</div>
@@ -223,7 +223,7 @@
 						<div class="col-md-4 data text">在线支付-${orders.payTypeStr}</div>
 
 						<div class="col-md-2 title">金额</div>
-						<div class="col-md-4 data text">￥${orders.product.productPrice}</div>
+						<div class="col-md-4 data text">￥${orders.route.price}</div>
 
 					</div>
 				</div>

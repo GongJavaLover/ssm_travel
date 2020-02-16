@@ -3,6 +3,7 @@ package com.gxj.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.gxj.dao.ProductDao;
 import com.gxj.domain.Product;
+import com.gxj.domain.Route;
 import com.gxj.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,13 +18,13 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> findAll(int page,int size) throws Exception {
+    public List<Route> findAll(int page,int size) throws Exception {
         PageHelper.startPage(page,size);
         return productDao.findAll();
     }
 
     @Override
-    public void save(Product product) throws Exception{
-        productDao.save(product);
+    public void save(Route route) throws Exception{
+        productDao.save(route);
     }
 }

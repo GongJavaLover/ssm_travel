@@ -36,4 +36,7 @@ public interface UserDao {
 
     @Insert("insert into user_role(userId,roleId)values(#{uid},#{rid})")
     void addRoleToUser(@Param("uid")int uid,@Param("rid")int rid);
+
+ /*   //根据用户名查询用户
+    UserInfo findByUserName(String username) throws Exception;*/
 }

@@ -9,16 +9,17 @@ import java.util.List;
 public class Orders {
     private Integer oid;
     private String orderNum;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Date orderTime;
-    private int orderStatus;
+    private String orderTime;
     private int peopleCount;
-    private Integer payType;
     private String orderDesc;
-    private Product product;
+    private Integer payType;
+    private int orderStatus;
+    private int route_id;
+    private int memberId;
+    private int travellerId;
+    private Route route;
     private Member member;
     private List<Traveller> travellers;
-    private String orderTimeStr;
     private String orderStatusStr;
     private String payTypeStr;
 
@@ -52,23 +53,12 @@ public class Orders {
         this.orderNum = orderNum;
     }
 
-    public Date getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(Date orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
-    }
-
-    public String getOrderTimeStr() {
-        if(orderTime!=null){
-            orderTimeStr= DateUtils.dateToString(orderTime,"yyyy-MM-dd HH:mm");
-        }
-        return orderTimeStr;
-    }
-
-    public void setOrderTimeStr(String orderTimeStr) {
-        this.orderTimeStr = orderTimeStr;
     }
 
     public int getOrderStatus() {
@@ -87,12 +77,36 @@ public class Orders {
         this.peopleCount = peopleCount;
     }
 
-    public Product getProduct() {
-        return product;
+    public int getRoute_id() {
+        return route_id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setRoute_id(int route_id) {
+        this.route_id = route_id;
+    }
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public int getTravellerId() {
+        return travellerId;
+    }
+
+    public void setTravellerId(int travellerId) {
+        this.travellerId = travellerId;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
     }
 
     public List<Traveller> getTravellers() {
@@ -136,6 +150,9 @@ public class Orders {
     }
 
     public String getOrderDesc() {
+        if(orderDesc==null){
+            orderDesc="没有其它要求";
+        }
         return orderDesc;
     }
 

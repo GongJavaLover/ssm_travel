@@ -60,8 +60,7 @@
 			</form>
 
 			<a href="#">忘记密码</a><br>
-
-
+			<a href="${basePath}/pages/user-register.jsp">注册</a><br>
 		</div>
 		<!-- /.login-box-body -->
 	</div>

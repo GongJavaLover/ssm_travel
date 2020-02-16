@@ -25,6 +25,9 @@
 			<li id="admin-index"><a
 				href="${basePath}/pages/main.jsp"><i
 					class="fa fa-dashboard"></i> <span>首页</span></a></li>
+			<li><a
+					href="${basePath}/user/transfer.do"><i
+					class="fa fa-dashboard"></i> <span>前台页面</span></a></li>
 
 			<li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
 					<span>系统管理</span> <span class="pull-right-container"> <i

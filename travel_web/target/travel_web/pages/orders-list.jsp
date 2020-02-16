@@ -236,6 +236,7 @@
 										<th class="sorting_asc sorting_asc_disabled">产品名称</th>
 										<th class="sorting_desc sorting_desc_disabled">金额</th>
 										<th class="sorting">下单时间</th>
+										<th class="text-center sorting">支付方式</th>
 										<th class="text-center sorting">订单状态</th>
 										<th class="text-center">操作</th>
 									</tr>
@@ -249,10 +250,11 @@
 											<td><input name="ids" type="checkbox"></td>
 											<td>${orders.oid }</td>
 											<td>${orders.orderNum }</td>
-											<td>${orders.product.productName }</td>
-											<td>${orders.product.productPrice }</td>
-											<td>${orders.orderTimeStr }</td>
-											<td class="text-center">${orders.orderStatusStr }</td>
+											<td>${orders.route.route_name}</td>
+											<td>${orders.route.price}</td>
+											<td>${orders.orderTime}</td>
+											<td>${orders.payTypeStr}</td>
+											<td class="text-center">${orders.orderStatusStr}</td>
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">订单</button>
 												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${basePath}/orders/findById.do?oid=${orders.oid}'">详情</button>

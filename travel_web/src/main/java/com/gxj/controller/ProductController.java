@@ -2,6 +2,7 @@ package com.gxj.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.gxj.domain.Product;
+import com.gxj.domain.Route;
 import com.gxj.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,8 @@ public class ProductController {
 
     //产品添加
     @RequestMapping("/save.do")
-    public String save(Product product) throws Exception{
-        productService.save(product);
+    public String save(Route route) throws Exception{
+        productService.save(route);
         return "redirect:findAll.do";
     }
 
@@ -41,8 +42,8 @@ public class ProductController {
     @RolesAllowed("ROLE_ADMIN")
     public ModelAndView findAll(@RequestParam(value = "page",required = true,defaultValue = "1") Integer page,@RequestParam(value = "size",required = true,defaultValue = "5") Integer size) throws Exception {
         ModelAndView mv=new ModelAndView();
-        List<Product> products = productService.findAll(page,size);
-        PageInfo pageInfo=new PageInfo(products);
+        List<Route> routes = productService.findAll(page, size);
+        PageInfo pageInfo=new PageInfo(routes);
         mv.addObject("pageInfo",pageInfo);
         mv.setViewName("product-list");
         return mv;
